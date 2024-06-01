@@ -32,7 +32,7 @@ if ! [[ "$2" =~ ^[0-9]+$ ]] || ! [[ "$3" =~ ^[0-9]+$ ]]; then
 	exit 1
 fi
 
-# 윤년
+# 윤년인가
 year=$3
 if (( year % 4 != 0 )); then
 	flag=0
@@ -44,7 +44,7 @@ else
 	flag=1
 fi
 
-# 각 월 일수 정의
+# 각 월과 일 수 정의
 case $month in
 	"Jan" | "Mar" | "May" | "Jul" | "Aug" | "Oct" | "Dec") days_in_month=31 ;;
 	"Apr" | "Jun" | "Sep" | "Nov") days_in_month=30 ;;
