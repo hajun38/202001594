@@ -44,6 +44,13 @@ else
 	flag=1
 fi
 
+year=$3
+if ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0 ); then
+  flag=1
+else
+  flag=0
+fi
+
 # 각 월과 일 수 정의
 case $month in
 	"Jan" | "Mar" | "May" | "Jul" | "Aug" | "Oct" | "Dec") days_in_month=31 ;;
